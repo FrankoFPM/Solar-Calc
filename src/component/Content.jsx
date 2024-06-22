@@ -24,7 +24,7 @@ function Content() {
   };
   useEffect(() => {
     if (Energy && efficiency && irradiation && power) {
-      let et = Energy * efficiency/100;
+      let et = Energy / (efficiency/100);
       let hps = Number(irradiation);
       let pp = et/hps;
       let n = pp / power;
