@@ -1,8 +1,9 @@
 import { Input, Tooltip } from "@nextui-org/react";
 import PropTypes from 'prop-types';
 import { useState } from "react";
+import ChartEnergy from "./ChartEnergy";
 
-function Results({et, hps, pp, n, power}) {
+function Results({et, hps, pp, n, power, energy}) {
   const [tooltipVisible, setTooltipVisible] = useState(false);
   return (
     <div>
@@ -115,6 +116,11 @@ function Results({et, hps, pp, n, power}) {
           value={Math.ceil(n)}
         />
       </div>
+      {energy !== null && energy !== 0 && et !== null && et !== 0 && (
+        <div>
+          <ChartEnergy energy={energy} total={et} />
+        </div>
+      )}
     </div>
   );
 }
@@ -124,5 +130,6 @@ Results.propTypes = {
   pp: PropTypes.number.isRequired,
   n: PropTypes.number.isRequired,
   power: PropTypes.number.isRequired,
+  energy: PropTypes.number.isRequired,
 };
 export default Results;

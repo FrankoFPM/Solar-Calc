@@ -53,7 +53,7 @@ function Content() {
         {console.log(Energy)}
         <EnergyCalc onValueChange={handleEnergyCalc} />
         <SystemData onValueChange={handleData} />
-        <Results et={et} hps={hps} pp={pp} n={n} power={power} />
+        <Results et={et} hps={hps} pp={pp} n={n} power={power} energy={Energy} />
       </div>
       <div className="h-full bg-white rounded-xl w-11/12 xl:w-2/3 mt-4 mb-8 p-5">
         <Environmental powert={powertotal} year={annualEnergy} />
